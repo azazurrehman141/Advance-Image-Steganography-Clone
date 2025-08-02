@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Advance Image Steganography</title>
+
+	<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+	
+	<header class="top">
+		<div class="logo">
+			<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#00FFC3"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg>
+			<div class="title">
+				<h2>Advanced Image Steganography</h2>
+				<p>Conceal. Encrypt. Reveal</p>
+			</div>
+		</div>
+		<div class="themeAndGit">
+			<button id="theme-switch">
+				<svg class="theme hidden" id="dark" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+				<svg class="theme" id="light" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/></svg>
+			</button>
+			
+
+			<svg class="git" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-74.4 -120.90175 644.8 725.4105"><path d="M165.9 389.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2 .6-2-1.3-4.3-4.3-5.2-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 0C106.1 0 0 105.3 0 244c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5 21.3 0 42.8 2.9 62.8 8.5 0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 449.8 496 354.9 496 244 496 105.3 383.5 0 244.8 0zM97.2 344.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+		</div>
+	</header>
+
+	<main>
+		<div class="buttons-box">
+			<button class="active" id="encode-btn">Encode</button>
+			<button id="decode-btn">Decode</button>
+			<button id="about-btn">About</button>
+		</div>
+
+		<div class="encode-content active" id="encode-content">
+			<div class="how-to">
+				<div class="head">
+					<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></span>
+					<h2>How to Encode Secret Messages</h2>
+				</div>
+				<div class="instructions">
+					<div class="instruction-box">
+						<strong>1.</strong>
+						<div class="h4-p">
+							<h4>Choose Your Image:</h4>
+							<p>Upload PNG, JPG, JPEG, BMP, or GIF. Larger images = more capacity!</p>
+						</div>	
+					</div>
+					<div class="instruction-box">
+						<strong>2.</strong>
+						<div class="h4-p">
+							<h4>Write Your Secret:</h4>
+							<p>Type any message - text, passwords, or data</p>
+						</div>
+					</div>
+					<div class="instruction-box">
+						<strong>3.</strong>
+						<div class="h4-p">
+							<h4>Add Security:</h4>
+							<p>Toggle encryption ON and set a strong password</p>
+						</div>
+					</div>
+					<div class="instruction-box">
+						<strong>4.</strong>
+						<div class="h4-p">
+							<h4>Generate & Download:</h4>
+							<p>Get a visually identical image with your hidden message</p>
+						</div>
+					</div>
+				</div>
+				<div class="tip">
+					<p>💡Tip: The output image looks exactly the same but secretly contains your data!</p>
+				</div>
+			</div>
+			<div class="select-image">
+				<div class="select-title">
+					<div class="title">
+						<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg></span>
+						<h2>Select Image</h2>
+					</div>
+					<p>Choose an image to hide your secret message in.</p>
+				</div>
+				<div class="upload-area" id="uploadAreaEncode">
+					<input type="file" id="fileInputEncode" accept="image/*">
+					<img id="imagePreviewEncode" src="#" alt="Image Preview">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M3 4v16h18V4H3zm16 14H5v-4l4-4 5 5 2-2 2 2v3zm-2-8l-2 2-5-5-4 4V6h16v6z"/>
+					</svg>
+					<h3>Upload an image</h3>
+					<p>Drag and drop an image file, or click to browse</p>
+					<p class="formats">Supports PNG, JPG, JPEG, BMP, GIF (max 50MB)</p>
+				</div>
+			</div>
+			<div class="secret-msg">
+				<div class="secret-msg-top">
+					<h2>Secret Message</h2>
+					<p>Enter the text message you want to hide in the image</p>
+				</div>
+				<div class="encrypted-msg">
+					<textarea name="message" id="secret-message" placeholder="type your secret message here..."></textarea>
+					<div class="toggle-word-count">
+						<div class="toggle">
+							<label class="switch">
+								<input type="checkbox" id="encryption-toggle">
+								<span class="slider"></span>
+							</label>
+							<span class="lock-svg"><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></span>
+							<span>Enable Encryption</span>
+						</div>
+						<span id="character-counter">0 characters</span>
+					</div>
+					<div class="encryption-password">
+						<input type="password" placeholder="Enter encryption password">
+						<p>This password will be required to decode the message</p>
+					</div>
+				</div>
+			</div>
+			<div class="encode-reset-btns">
+				<button class="encode-btn">Encode Message</button>
+				<button class="reset-btn">Reset</button>
+			</div>
+		</div>
+
+		<div class="decode-content" id="decode-content">
+			<div class="how-to">
+				<div class="head">
+					<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg></span>
+					<h2>How to Decode Hidden Messages</h2>
+				</div>
+				<div class="instructions">
+					<div class="instruction-box">
+						<strong>1.</strong>
+						<div class="h4-p">
+							<h4>Upload Image:</h4>
+							<p>Select an image that contains a secret message</p>
+						</div>
+					</div>
+					<div class="instruction-box">
+						<strong>2.</strong>
+						<div class="h4-p">
+							<h4>Enter Password:</h4>
+							<p>If encrypted, you'll be prompted for the password</p>
+						</div>					
+					</div>
+					<div class="instruction-box">
+						<strong>3.</strong>
+						<div class="h4-p">
+							<h4>Extract Data:</h4>
+							<p>Click "Decode Message" to reveal hidden content</p>
+						</div>
+					</div>
+					<div class="instruction-box">
+						<strong>4.</strong>
+						<div class="h4-p">
+							<h4>Access Secret:</h4>
+							<p>Copy the revealed message or save it securely</p>
+						</div>
+					</div>
+				</div>
+				<div class="tip">
+					<p>💡Tip: The output image looks exactly the same but secretly contains your data!</p>
+				</div>
+			</div>
+			<div class="select-image">
+				<div class="select-title">
+					<div class="title">
+						<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg></span>
+						<h2>Select Encoded Image</h2>
+					</div>
+					<p>Choose an image that contains a hidden message</p>
+				</div>
+				<div class="upload-area" id="uploadAreaDecode">
+					<input type="file" id="fileInputDecode" accept="image/*">
+					<img id="imagePreviewDecode" src="#" alt="Image Preview">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+						<path d="M0 0h24v24H0z" fill="none"/>
+						<path d="M3 4v16h18V4H3zm16 14H5v-4l4-4 5 5 2-2 2 2v3zm-2-8l-2 2-5-5-4 4V6h16v6z"/>
+					</svg>
+					<h3>Upload an image</h3>
+					<p>Drag and drop an image file, or click to browse</p>
+					<p class="formats">Supports PNG, JPG, JPEG, BMP, GIF (max 50MB)</p>
+				</div>
+			</div>
+			<div class="decode-reset-btns">
+				<button class="decode-btn">Decode Message</button>
+				<button class="reset-btn">Reset</button>
+			</div>
+		</div>
+
+		<div class="about-content" id="about-content">
+			<div class="box definition">
+				<div class="head">
+					<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg></span>
+					<h2>What is Steganography?</h2>
+				</div>
+				<div class="text">
+					<p>Steganography is the ancient art of hiding information in plain sight. Unlike encryption which scrambles data, steganography conceals the very existence of secret messages by embedding them within ordinary-looking files like images.</p>
+				</div>
+			</div>
+			<div class="box how">
+				<div class="head">
+					<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M360-360v-240h240v240H360Zm80-80h80v-80h-80v80Zm-80 320v-80h-80q-33 0-56.5-23.5T200-280v-80h-80v-80h80v-80h-80v-80h80v-80q0-33 23.5-56.5T280-760h80v-80h80v80h80v-80h80v80h80q33 0 56.5 23.5T760-680v80h80v80h-80v80h80v80h-80v80q0 33-23.5 56.5T680-200h-80v80h-80v-80h-80v80h-80Zm320-160v-400H280v400h400ZM480-480Z"/></svg></span>
+					<h3>How Our Technology Works?</h3>
+					<p>A deep dive into the technical implementation</p>
+				</div>
+				<div class="text">
+					<div class="lsb">
+						<div class="top-sec">
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/></svg>
+							<h4>LSB Steganography</h4>
+						</div>
+						<p>We use Least Significant Bit (LSB) substitution - the most reliable steganographic technique. Each pixel in an image has red, green, and blue values from 0-255. By modifying only the last bit of each color channel, we can hide data while keeping visual changes imperceptible (less than 0.4% difference).</p>
+						<div class="para">
+							<p>Original: RGB(254, 162, 89)</p>
+							<p>Modified: RGB(255, 163, 88)</p>
+							<p style="color: blue; font-weight: bold;">Human eye: No difference! 🎯</p>
+						</div>
+					</div>
+					<div class="aes">
+						<div class="top-sec">
+							<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z"/></svg>
+							<h4>AES-256 Encryption Layer</h4>
+						</div>
+						<p>Before hiding your message, we optionally encrypt it using AES-256 in CBC mode with PBKDF2 key derivation (100,000 iterations). This adds an extra layer of protection - even if someone suspects steganography, they still need your password to decrypt the message.</p>
+						<div class="para">
+							<p>OMessage → Encrypt → Embed → Image</p>
+							<p>Image → Extract → Decrypt → Message</p>
+							<p style="color: green; font-weight: bold;">Double protection! 🛡️</p>
+						</div>
+					</div>
+					<div class="tip">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m422-232 207-248H469l29-227-185 267h139l-30 208ZM320-80l40-280H160l360-520h80l-40 320h240L400-80h-80Zm151-390Z"/></svg>
+						<div class="tip-conten">
+							<h4>Pro Tip:</h4>
+							<p>The capacity of an image depends on its pixel count. A 1920×1080 image can hide approximately 777KB of data, while maintaining perfect visual fidelity. That's enough for novels, documents, or even small files!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box features">
+				<div class="head">
+					<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M280-400q-33 0-56.5-23.5T200-480q0-33 23.5-56.5T280-560q33 0 56.5 23.5T360-480q0 33-23.5 56.5T280-400Zm0 160q-100 0-170-70T40-480q0-100 70-170t170-70q67 0 121.5 33t86.5 87h352l120 120-180 180-80-60-80 60-85-60h-47q-32 54-86.5 87T280-240Zm0-80q56 0 98.5-34t56.5-86h125l58 41 82-61 71 55 75-75-40-40H435q-14-52-56.5-86T280-640q-66 0-113 47t-47 113q0 66 47 113t113 47Z"/></svg></span>
+					<h3>Advance Features</h3>
+					<p>Enterprise-grade capabilities in a simple interface</p>
+				</div>
+				<div class="text">
+					<div class="feature-box" id="doFlex">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-80q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-84q104-33 172-132t68-220v-189l-240-90-240 90v189q0 121 68 220t172 132Zm0-316Z"/></svg>
+						<div class="content">
+							<h4>Military-Grade Security</h4>
+							<p>AES-256 encryption with PBKDF2 key derivation ensures your secrets stay secret.</p>
+						</div>
+					</div>
+					<div class="feature-box" id="doFlex">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/></svg>
+						<div class="content">
+							<h4>Invisible to Detection</h4>
+							<p>Messages are hidden in the least significant bits of pixels - completely undetectable to the naked eye.</p>
+						</div>
+					</div>
+					<div class="feature-box" id="doFlex">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm40-80h480L570-480 450-320l-90-120-120 160Zm-40 80v-560 560Zm140-360q25 0 42.5-17.5T400-620q0-25-17.5-42.5T340-680q-25 0-42.5 17.5T280-620q0 25 17.5 42.5T340-560Z"/></svg>
+						<div class="content">
+							<h4>Multiple Formats</h4>
+							<p>Support for PNG, JPG, JPEG, BMP, and GIF images of any size. Larger images can hide more data.</p>
+						</div>
+					</div>
+					<div class="feature-box" id="doFlex">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M360-360v-240h240v240H360Zm80-80h80v-80h-80v80Zm-80 320v-80h-80q-33 0-56.5-23.5T200-280v-80h-80v-80h80v-80h-80v-80h80v-80q0-33 23.5-56.5T280-760h80v-80h80v80h80v-80h80v80h80q33 0 56.5 23.5T760-680v80h80v80h-80v80h80v80h-80v80q0 33-23.5 56.5T680-200h-80v80h-80v-80h-80v80h-80Zm320-160v-400H280v400h400ZM480-480Z"/></svg>
+						<div class="content">
+							<h4>Advance Algorithms</h4>
+							<p>Implements proven LSB (Least Significant Bit) steganography with cryptographic integrity.</p>
+						</div>
+					</div>
+					<div class="feature-box" id="doFlex">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="m280-80 160-300-320-40 480-460h80L520-580l320 40L360-80h-80Zm222-247 161-154-269-34 63-117-160 154 268 33-63 118Zm-22-153Z"/></svg>
+						<div class="content">
+							<h4>Real-time processing</h4>
+							<p>Fast encoding and decoding - no server uploads required. Everything happens in your browser.</p>
+						</div>
+					</div>
+					<div class="feature-box" id="doFlex">
+						<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M320-440h320v-80H320v80Zm0 120h320v-80H320v80Zm0 120h200v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>
+						<div class="content">
+							<h4>Metadata Preservation</h4>
+							<p>Original image properties and quality are maintained while hiding your secret data.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box applications">
+				<div class="head">
+					<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M40-160v-112q0-34 17.5-62.5T104-378q62-31 126-46.5T360-440q66 0 130 15.5T616-378q29 15 46.5 43.5T680-272v112H40Zm720 0v-120q0-44-24.5-84.5T666-434q51 6 96 20.5t84 35.5q36 20 55 44.5t19 53.5v120H760ZM360-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47Zm400-160q0 66-47 113t-113 47q-11 0-28-2.5t-28-5.5q27-32 41.5-71t14.5-81q0-42-14.5-81T544-792q14-5 28-6.5t28-1.5q66 0 113 47t47 113ZM120-240h480v-32q0-11-5.5-20T580-306q-54-27-109-40.5T360-360q-56 0-111 13.5T140-306q-9 5-14.5 14t-5.5 20v32Zm240-320q33 0 56.5-23.5T440-640q0-33-23.5-56.5T360-720q-33 0-56.5 23.5T280-640q0 33 23.5 56.5T360-560Zm0 320Zm0-400Z"/></svg></span>
+					<h3>Real-World Applications</h3>
+					<p>Where steganography makes a difference</p>
+				</div>
+				<div class="text">
+					<div class="left">
+						<p>🕵️ Secure communication in sensitive environments</p>
+						<p>📝 Hidden backup of important passwords or keys</p>
+						<p>🎨 igital watermarking for copyright protection</p>
+					</div>
+					<div class="right">
+						<p>🔐 Covert file transfer without raising suspicion</p>
+						<p>📸 Adding metadata that survives image sharing</p>
+						<p>🎯 Educational demonstrations of cryptography</p>
+					</div>
+				</div>
+			</div>
+			<div class="box history">
+				<div class="head">
+					<span><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"><path d="M480-120q-138 0-240.5-91.5T122-440h82q14 104 92.5 172T480-200q117 0 198.5-81.5T760-480q0-117-81.5-198.5T480-760q-69 0-129 32t-101 88h110v80H120v-240h80v94q51-64 124.5-99T480-840q75 0 140.5 28.5t114 77q48.5 48.5 77 114T840-480q0 75-28.5 140.5t-77 114q-48.5 48.5-114 77T480-120Zm112-192L440-464v-216h80v184l128 128-56 56Z"/></svg></span>
+					<h3>A Brief History</h3>
+					<p>Steganography dates back to 440 BC when Histiaeus tattooed a message on his slave's scalp, let the hair grow back, and sent him as a messenger. During WWII, spies used invisible ink and microdots.</p>
+				</div>
+				<div class="text">
+					<p>Today's digital steganography leverages the complexity of digital media files. Our implementation follows modern cryptographic standards while maintaining the time-tested principle of security through obscurity, backed by mathematics.</p>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<footer>
+		<p>Built with 💙 for 🌍 by Abu Zar Mishwani</p>
+	</footer>
+
+	<script src="script.js" defer></script>
+</body>
+</html>
